@@ -37,6 +37,10 @@ runs:
       run: sudo apt-get install doxygen graphviz -y
       shell: bash
 
+    - name: Install pcregrep
+      run: sudo apt-get install -y pcregrep
+      shell: bash
+
     - name: Generate Doxygen Documentation by my shell script
       run: sh doc/doxy.sh
       shell: bash
