@@ -18,7 +18,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -30,6 +30,7 @@ jobs:
 - `folder` (optional): Folder where the docs are built. Defaults to `docs/html`.
 - `config_file` (optional): Path of the Doxygen configuration file. Defaults to `Doxyfile`.
 - `target_folder` (optional): Directory within the deployment branch to push to. Defaults to empty (root).
+- `doxygen_version` (optional): Version of Doxygen to install. Defaults to `1.9.6`. **NOTE - only works with 1.9.3 and higher versions**
 
 ## Advanced Usage
 
@@ -48,12 +49,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+      - uses: DenverCoder1/doxygen-github-pages-action@v2.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
           folder: docs/html
           config_file: Doxyfile
+          doxygen_version: 1.9.6
 ```
 
 ## About this Action
